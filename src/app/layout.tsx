@@ -17,20 +17,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Digital Cluster 25 - AI-Powered Entrepreneurial Community',
+  title: ':after - Управление главным активом: Новая философия жизненной энергии',
   description:
-    'Пионерское онлайн-сообщество на базе искусственного интеллекта для предпринимателей. Умное сопоставление, глобальные связи и персонализированный опыт.',
+    'Велнес-экосистема нового поколения для управления жизненной энергией. Наука, технологии и среда для современных лидеров. Открытие в UNIT.City.',
   keywords: [
-    'AI',
-    'предпринимательство',
-    'нетворкинг',
-    'сообщество',
-    'искусственный интеллект',
-    'Digital Cluster 25',
+    'велнес',
+    'здоровье',
+    'энергия',
+    'фитнес',
+    'спорт',
+    'восстановление',
+    'after',
+    'UNIT.City',
+    'Киев',
   ],
-  authors: [{ name: 'Digital Cluster 25 Team' }],
-  creator: 'Digital Cluster 25',
-  publisher: 'Digital Cluster 25',
+  authors: [{ name: ':after Team' }],
+  creator: ':after',
+  publisher: ':after',
   robots: {
     index: true,
     follow: true,
@@ -45,25 +48,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    url: 'https://digital-cluster-25.vercel.app',
-    title: 'Digital Cluster 25 - AI-Powered Entrepreneurial Community',
+    url: 'https://after.vercel.app',
+    title: ':after - Управление главным активом: Новая философия жизненной энергии',
     description:
-      'Пионерское онлайн-сообщество на базе искусственного интеллекта для предпринимателей',
-    siteName: 'Digital Cluster 25',
+      'Велнес-экосистема нового поколения для управления жизненной энергией. Наука, технологии и среда для современных лидеров.',
+    siteName: ':after',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Digital Cluster 25 - AI-Powered Entrepreneurial Community',
+        alt: ':after - Велнес-экосистема нового поколения',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Cluster 25 - AI-Powered Entrepreneurial Community',
+    title: ':after - Управление главным активом: Новая философия жизненной энергии',
     description:
-      'Пионерское онлайн-сообщество на базе искусственного интеллекта для предпринимателей',
+      'Велнес-экосистема нового поколения для управления жизненной энергией. Наука, технологии и среда для современных лидеров.',
     images: ['/og-image.jpg'],
   },
   viewport: {

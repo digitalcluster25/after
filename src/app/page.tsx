@@ -9,14 +9,20 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
+  Heart,
   Brain,
-  Users,
-  Globe,
+  Zap,
   Target,
   TrendingUp,
   Lightbulb,
   ArrowRight,
   CheckCircle,
+  Microscope,
+  Smartphone,
+  Users,
+  Leaf,
+  Activity,
+  Shield,
 } from 'lucide-react';
 
 export default function Home() {
@@ -27,71 +33,70 @@ export default function Home() {
         <div className='container mx-auto px-6 max-w-7xl'>
           <div className='text-center space-y-8'>
             <Badge variant='outline' className='text-sm'>
-              Сообщество на базе ИИ
+              White Paper
             </Badge>
             <h1 className='text-5xl md:text-6xl font-bold tracking-tight'>
-              Digital Cluster 25
+              :after
             </h1>
             <p className='text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed'>
-              Будущее предпринимательского нетворкинга
+              Управление главным активом: Новая философия жизненной энергии для современных лидеров
             </p>
             <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-              Пионерское онлайн-сообщество на базе искусственного интеллекта,
-              созданное специально для предпринимателей, формирующих будущее.
-              Объединяя искусственный интеллект с силой человеческих связей, мы
-              поднимаем планку того, чем может стать предпринимательский
-              нетворкинг.
+              В современной экономике знаний главным капиталом и ключевым фактором успеха является не время и не деньги, а жизненная энергия. Способность концентрироваться, принимать верные решения, креативность и стрессоустойчивость напрямую зависят от нашего физического и ментального состояния.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <Button size='lg' className='text-lg px-8 py-6'>
-                Присоединиться к сообществу
+                Узнать больше о проекте
                 <ArrowRight className='ml-2 h-5 w-5' />
               </Button>
               <Button size='lg' variant='outline' className='text-lg px-8 py-6'>
-                Узнать больше
+                Попасть в список ожидания
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Introduction Section */}
       <section className='py-20'>
         <div className='container mx-auto px-6 max-w-7xl'>
           <div className='text-center space-y-4 mb-16'>
             <h2 className='text-4xl font-bold'>
-              Откройте для себя Digital Cluster 25
+              Введение
+            </h2>
+            <div className='max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed'>
+              <p>
+                Однако существующая велнес-индустрия в Украине предлагает устаревшие решения. Она продает доступ к тренажерам и временное расслабление, игнорируя первопричину проблемы — отсутствие у человека системного понимания своего организма и инструментов для управления личной энергией.
+              </p>
+              <p>
+                Этот документ представляет :after — велнес-экосистему нового поколения, созданную для того, чтобы превратить вас из пассивного "потребителя" велнес-услуг в осознанного архитектора своего здоровья и производительности. Мы предлагаем не просто фитнес-клуб, а научный, технологичный и эстетический подход к управлению вашим главным активом.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Energy Crisis Section */}
+      <section className='py-20 bg-muted/30'>
+        <div className='container mx-auto px-6 max-w-7xl'>
+          <div className='text-center space-y-4 mb-16'>
+            <h2 className='text-4xl font-bold'>
+              Часть 1: Энергетический кризис современного профессионала
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-              Больше чем просто платформа для нетворкинга — это живая экосистема
-              на базе ИИ, где амбициозные предприниматели собираются вместе,
-              чтобы делиться опытом, учиться и расти.
+              Мы живем в эпоху беспрецедентных нагрузок. Для ключевых сегментов украинского общества проблема стоит особенно остро.
             </p>
           </div>
 
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <div className='grid md:grid-cols-3 gap-8'>
             <Card className='border-2 hover:border-primary/50 transition-colors'>
               <CardHeader>
                 <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
                   <Brain className='h-6 w-6 text-primary' />
                 </div>
-                <CardTitle>Умное сопоставление на базе ИИ</CardTitle>
+                <CardTitle>Специалисты</CardTitle>
                 <CardDescription>
-                  Интеллектуальные рекомендации ресурсов, партнеров и
-                  возможностей, адаптированные под ваши бизнес-цели.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className='border-2 hover:border-primary/50 transition-colors'>
-              <CardHeader>
-                <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
-                  <Users className='h-6 w-6 text-primary' />
-                </div>
-                <CardTitle>Глобальное сообщество</CardTitle>
-                <CardDescription>
-                  Общайтесь с предпринимателями по всему миру, а ИИ обеспечивает
-                  локальную релевантность и значимые взаимодействия.
+                  IT, креативные индустрии. Постоянные дедлайны, когнитивные перегрузки и сидячий образ жизни приводят к хроническому стрессу и профессиональному выгоранию.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -101,11 +106,21 @@ export default function Home() {
                 <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
                   <Target className='h-6 w-6 text-primary' />
                 </div>
-                <CardTitle>Персонализированный опыт</CardTitle>
+                <CardTitle>Лидеры</CardTitle>
                 <CardDescription>
-                  Каждое взаимодействие значимо и курируется для максимального
-                  эффекта, адаптируясь к вашим уникальным потребностям и стадии
-                  роста.
+                  Владельцы бизнеса, топ-менеджеры. Высочайший уровень ответственности, необходимость принимать стратегические решения в условиях неопределенности истощают нервную систему.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className='border-2 hover:border-primary/50 transition-colors'>
+              <CardHeader>
+                <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
+                  <Activity className='h-6 w-6 text-primary' />
+                </div>
+                <CardTitle>Атлеты</CardTitle>
+                <CardDescription>
+                  Профессионалы и любители. Их цель — пик физической формы. Они сталкиваются с отсутствием в Украине комплексной инфраструктуры для достижения максимальных результатов.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -113,153 +128,117 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI Benefits Section */}
-      <section className='py-20 bg-muted/30'>
-        <div className='container mx-auto px-6 max-w-7xl'>
-          <div className='grid lg:grid-cols-2 gap-16 items-center'>
-            <div className='space-y-8'>
-              <div>
-                <h2 className='text-4xl font-bold mb-6'>
-                  Как ИИ расширяет возможности нашего сообщества
-                </h2>
-                <p className='text-lg text-muted-foreground mb-8'>
-                  Искусственный интеллект — это двигатель, который питает каждый
-                  аспект Digital Cluster 25. С момента присоединения ИИ начинает
-                  изучать ваши бизнес-цели, предпочтения и вызовы.
-                </p>
-              </div>
-
-              <div className='space-y-6'>
-                <div className='flex items-start space-x-4'>
-                  <CheckCircle className='h-6 w-6 text-primary mt-1 flex-shrink-0' />
-                  <div>
-                    <h3 className='font-semibold mb-2'>
-                      Проактивное сопоставление
-                    </h3>
-                    <p className='text-muted-foreground'>
-                      Экономит время и ускоряет ваш путь к успеху с помощью
-                      точных рекомендаций.
-                    </p>
-                  </div>
-                </div>
-
-                <div className='flex items-start space-x-4'>
-                  <CheckCircle className='h-6 w-6 text-primary mt-1 flex-shrink-0' />
-                  <div>
-                    <h3 className='font-semibold mb-2'>
-                      Персональный бизнес-ассистент
-                    </h3>
-                    <p className='text-muted-foreground'>
-                      Анализирует ваши данные, предоставляет рыночную аналитику
-                      и выделяет релевантные тренды.
-                    </p>
-                  </div>
-                </div>
-
-                <div className='flex items-start space-x-4'>
-                  <CheckCircle className='h-6 w-6 text-primary mt-1 flex-shrink-0' />
-                  <div>
-                    <h3 className='font-semibold mb-2'>
-                      Развивающийся интеллект
-                    </h3>
-                    <p className='text-muted-foreground'>
-                      Постоянно учится и адаптируется по мере роста вашего
-                      бизнеса и изменения потребностей.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className='relative'>
-              <Card className='p-8'>
-                <div className='space-y-6'>
-                  <div className='flex items-center space-x-3'>
-                    <div className='w-3 h-3 bg-green-500 rounded-full'></div>
-                    <span className='text-sm font-medium'>
-                      Анализ ИИ активен
-                    </span>
-                  </div>
-                  <div className='space-y-4'>
-                    <div className='flex justify-between items-center'>
-                      <span className='text-sm'>Бизнес-цели</span>
-                      <Badge variant='secondary'>Проанализированы</Badge>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <span className='text-sm'>Рыночные тренды</span>
-                      <Badge variant='secondary'>Обновлены</Badge>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <span className='text-sm'>Связи</span>
-                      <Badge variant='secondary'>3 новых совпадения</Badge>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <span className='text-sm'>Возможности</span>
-                      <Badge variant='secondary'>2 доступны</Badge>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Grid */}
+      {/* Solution Section */}
       <section className='py-20'>
         <div className='container mx-auto px-6 max-w-7xl'>
           <div className='text-center space-y-4 mb-16'>
             <h2 className='text-4xl font-bold'>
-              Почему выбрать Digital Cluster 25?
+              Часть 2: Решение :after — Экосистема управления энергией
             </h2>
-            <p className='text-xl text-muted-foreground'>
-              Ощутите будущее предпринимательской поддержки уже сегодня
+            <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
+              Мы предлагаем целостный подход, стоящий на трех китах: Наука, Технологии и Среда.
             </p>
           </div>
 
-          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-            <div className='text-center space-y-4'>
-              <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
-                <TrendingUp className='h-8 w-8 text-primary' />
-              </div>
-              <h3 className='text-xl font-semibold'>Умный нетворкинг</h3>
-              <p className='text-muted-foreground'>
-                Связи на базе ИИ, которые имеют значение, а не просто случайные
-                встречи.
-              </p>
-            </div>
+          <div className='grid lg:grid-cols-3 gap-8'>
+            <Card className='border-2 hover:border-primary/50 transition-colors'>
+              <CardHeader>
+                <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
+                  <Microscope className='h-6 w-6 text-primary' />
+                </div>
+                <CardTitle>1. НАУКА: Ваша личная "Лаборатория Здоровья"</CardTitle>
+                <CardDescription className='space-y-4'>
+                  <p>Это ядро нашего проекта и главное отличие от всех существующих клубов. Мы не говорим вам, что делать. Мы учим вас, почему это нужно делать, и даем объективные данные о вашем теле.</p>
+                  <div className='space-y-2'>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Комплексная диагностика</span>
+                    </div>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Образовательные программы</span>
+                    </div>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Персонализированные протоколы</span>
+                    </div>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
-            <div className='text-center space-y-4'>
-              <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
-                <Lightbulb className='h-8 w-8 text-primary' />
-              </div>
-              <h3 className='text-xl font-semibold'>Острые инсайты</h3>
-              <p className='text-muted-foreground'>
-                Получайте рыночную разведку и анализ трендов, адаптированные под
-                вашу отрасль.
-              </p>
-            </div>
+            <Card className='border-2 hover:border-primary/50 transition-colors'>
+              <CardHeader>
+                <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
+                  <Smartphone className='h-6 w-6 text-primary' />
+                </div>
+                <CardTitle>2. ТЕХНОЛОГИИ: Ваша цифровая велнес-экосистема</CardTitle>
+                <CardDescription className='space-y-4'>
+                  <p>Мы интегрируем физический опыт с цифровыми инструментами, чтобы сделать управление здоровьем бесшовным и удобным.</p>
+                  <div className='space-y-2'>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Фитнес-трекер :after</span>
+                    </div>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Приложение :after</span>
+                    </div>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>AI-советник</span>
+                    </div>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
-            <div className='text-center space-y-4'>
-              <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
-                <Globe className='h-8 w-8 text-primary' />
-              </div>
-              <h3 className='text-xl font-semibold'>Глобальный охват</h3>
-              <p className='text-muted-foreground'>
-                Общайтесь с предпринимателями по всему миру, сохраняя локальную
-                релевантность.
-              </p>
-            </div>
+            <Card className='border-2 hover:border-primary/50 transition-colors'>
+              <CardHeader>
+                <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4'>
+                  <Leaf className='h-6 w-6 text-primary' />
+                </div>
+                <CardTitle>3. СРЕДА: "Тихая роскошь" и сила сообщества</CardTitle>
+                <CardDescription className='space-y-4'>
+                  <p>Мы создаем пространство, которое восстанавливает само по себе.</p>
+                  <div className='space-y-2'>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Эстетика минимализма</span>
+                    </div>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Эксклюзивное оборудование</span>
+                    </div>
+                    <div className='flex items-start space-x-2'>
+                      <CheckCircle className='h-4 w-4 text-primary mt-1 flex-shrink-0' />
+                      <span className='text-sm'>Курируемое сообщество</span>
+                    </div>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
 
-            <div className='text-center space-y-4'>
-              <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
-                <Users className='h-8 w-8 text-primary' />
-              </div>
-              <h3 className='text-xl font-semibold'>Связанный опыт</h3>
-              <p className='text-muted-foreground'>
-                Бесшовное сочетание технологий и человеческих амбиций для
-                максимального эффекта.
+      {/* Conclusion Section */}
+      <section className='py-20 bg-muted/30'>
+        <div className='container mx-auto px-6 max-w-7xl'>
+          <div className='text-center space-y-8'>
+            <h2 className='text-4xl font-bold'>
+              Заключение: Инвестиция, а не расход
+            </h2>
+            <div className='max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed'>
+              <p>
+                Членство в :after — это не плата за доступ к тренажерам. Это стратегическая инвестиция в ваш главный актив — жизненную энергию.
               </p>
+              <p>
+                Мы даем вам систему, которая позволит дольше оставаться продуктивным, креативным и устойчивым к вызовам современного мира. Мы меняем саму парадигму заботы о себе.
+              </p>
+              <div className='text-2xl font-semibold text-primary mt-8'>
+                :after Энергия в твоих руках.
+              </div>
             </div>
           </div>
         </div>
@@ -272,13 +251,11 @@ export default function Home() {
             Готовы присоединиться к революции?
           </h2>
           <p className='text-xl mb-8 opacity-90'>
-            Ваш следующий большой прорыв — всего в одной связи. Присоединяйтесь
-            к Digital Cluster 25 и ощутите будущее предпринимательского
-            нетворкинга.
+            Чтобы узнать больше о проекте и попасть в список ожидания на открытие первого клуба в UNIT.City, посетите наш сайт.
           </p>
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <Button size='lg' variant='secondary' className='text-lg px-8 py-6'>
-              Начать сегодня
+              Узнать больше о проекте
               <ArrowRight className='ml-2 h-5 w-5' />
             </Button>
             <Button
@@ -286,7 +263,7 @@ export default function Home() {
               variant='outline'
               className='text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary'
             >
-              Запланировать демо
+              Попасть в список ожидания
             </Button>
           </div>
         </div>
