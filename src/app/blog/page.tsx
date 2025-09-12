@@ -5,45 +5,34 @@ import React from 'react';
 import { PageHeader } from '@/components/page-header';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 
 interface BlogPost {
   href: string;
   date: string;
   title: string;
+  lead: string;
   content: string;
   tags: string[];
 }
 
 const blogPosts: BlogPost[] = [
   {
-    href: '/blog/building-design-system-shadcn-ui',
-    date: '15 марта 2024',
-    title: 'Создание дизайн-системы с Shadcn UI',
+    href: '/blog/measuring-activity-parameter',
+    date: '1 апреля 2024',
+    title: 'Как правильно измерять параметр "Активность"',
+    lead: 'Параметр "Активность" является одним из ключевых показателей физического состояния человека.',
     content:
-      'Изучите, как создать масштабируемую дизайн-систему с использованием компонентов Shadcn UI. Мы рассмотрим композицию компонентов, темизацию и лучшие практики для поддержания консистентности в вашем приложении. Узнайте, как использовать мощь примитивов Radix UI, сохраняя чистоту и поддерживаемость кодовой базы.',
-    tags: [
-      'Дизайн-системы',
-      'Shadcn UI',
-      'React',
-      'Tailwind CSS',
-      'UI Разработка',
-    ],
+      'Параметр "Активность" является одним из ключевых показателей физического состояния человека. Он отражает общий уровень двигательной активности в течение дня и измеряется в ккал/день. Правильное измерение этого параметра критически важно для оценки энергетического баланса и планирования тренировок.\n\nДля точного измерения активности используются различные методы. Наиболее точным является калориметрия - прямое измерение тепловыделения организма. Однако в повседневной практике чаще применяются косвенные методы: расчет по формуле Харриса-Бенедикта с учетом коэффициента активности, использование фитнес-трекеров с акселерометрами, или ведение дневника активности с последующим расчетом энергозатрат.\n\nПри измерении важно учитывать все виды активности: базовый метаболизм, повседневные движения, физические упражнения и даже термогенез. Необходимо вести учет в течение минимум 7 дней для получения репрезентативных данных. Измерения следует проводить в одинаковых условиях: время суток, состояние покоя, температура окружающей среды.\n\nИнтерпретация результатов требует понимания индивидуальных особенностей: возраста, пола, веса, мышечной массы, уровня тренированности. Нормальные значения активности варьируются от 100 до 1000 ккал/день в зависимости от образа жизни и целей. Регулярный мониторинг позволяет корректировать питание и тренировочную программу для достижения оптимального энергетического баланса.',
+    tags: ['Активность', 'Измерения', 'Здоровье', 'Мониторинг'],
   },
   {
-    href: '/blog/headless-ui-components-rise',
-    date: '10 марта 2024',
-    title: 'Восход Headless UI компонентов',
+    href: '/blog/activity-index-measurement',
+    date: '8 апреля 2024',
+    title: 'Индекс активности: полное руководство по измерению',
+    lead: 'Комплексный показатель, который объединяет несколько параметров физической активности в единую метрику.',
     content:
-      'Исследуйте преимущества headless UI компонентов и то, как они революционизируют веб-разработку. Мы сравним популярные headless библиотеки, обсудим соображения доступности и покажем, как создавать гибкие, нестилизованные компоненты, которые можно настроить под любую дизайн-систему.',
-    tags: [
-      'Headless UI',
-      'Доступность',
-      'Архитектура компонентов',
-      'React',
-      'Веб-разработка',
-    ],
+      'Индекс активности - это комплексный показатель, который объединяет несколько параметров физической активности в единую метрику. Он позволяет оценить не только количество, но и качество двигательной активности, учитывая интенсивность, продолжительность и регулярность нагрузок.\n\nДля расчета индекса активности используются следующие компоненты: общая активность (ккал/день), интенсивность тренировок (по шкале 1-10), продолжительность активных периодов (минуты), частота тренировок (раз в неделю) и восстановление между нагрузками. Каждый компонент имеет свой вес в итоговом расчете, что позволяет получить сбалансированную оценку.\n\nИзмерение индекса активности требует комплексного подхода. Необходимо использовать несколько инструментов: фитнес-трекер для непрерывного мониторинга, пульсометр для контроля интенсивности, дневник тренировок для фиксации деталей. Данные собираются в течение минимум 2 недель для получения стабильных результатов.\n\nИнтерпретация индекса активности основана на шкале от 0 до 100 баллов. Значения 0-20 соответствуют низкой активности, 21-40 - недостаточной, 41-60 - умеренной, 61-80 - высокой, 81-100 - очень высокой активности. Оптимальный диапазон 60-80 баллов обеспечивает максимальную пользу для здоровья при минимальном риске перетренированности.\n\nРегулярный мониторинг индекса активности позволяет отслеживать прогресс, выявлять периоды перетренированности или недостаточной нагрузки, корректировать тренировочную программу. Это особенно важно для спортсменов и людей, ведущих активный образ жизни, так как помогает оптимизировать нагрузку и предотвратить травмы.',
+    tags: ['Индекс активности', 'Мониторинг', 'Тренировки', 'Анализ'],
   },
 ];
 
@@ -53,54 +42,45 @@ export default function BlogPage() {
       <PageHeader title='Справочник' />
 
       <section className='pb-8 md:pb-16'>
-        <div className='space-y-6 pt-2'>
+        <div className='space-y-8 pt-5'>
           {blogPosts.map((post, index) => (
             <React.Fragment key={index}>
-              <Card className='border-none shadow-none'>
-                <CardContent className='px-0'>
-                  <div className='relative w-full'>
-                    <p className='text-sm tracking-tight text-muted-foreground'>
-                      {post.date}
-                    </p>
+              <div className='relative w-full'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  {post.date}
+                </p>
 
-                    <Link href={post.href}>
-                      <h2 className='mt-2 text-lg font-medium tracking-tight text-foreground md:text-2xl hover:text-primary transition-colors cursor-pointer'>
-                        {post.title}
-                      </h2>
-                    </Link>
+                <Link href={post.href}>
+                  <h2 className='text-2xl font-bold text-foreground mb-3 hover:text-primary transition-colors cursor-pointer'>
+                    {post.title}
+                  </h2>
+                </Link>
 
-                    <p className='md:text-md mt-4 text-sm text-muted-foreground md:pr-24 xl:pr-32'>
-                      {post.content}
-                    </p>
+                <p className='text-muted-foreground leading-relaxed mb-4'>
+                  {post.lead}
+                </p>
 
-                    <div className='mt-4 flex w-9/10 flex-wrap items-center gap-2'>
-                      {post.tags.map((tag, tagIndex) => (
-                        <Badge
-                          key={tagIndex}
-                          variant='secondary'
-                          className='h-6 rounded-md'
-                        >
-                          <span className='text-md font-medium text-muted-foreground'>
-                            {tag}
-                          </span>
-                        </Badge>
-                      ))}
-                    </div>
+                <div className='flex flex-wrap items-center gap-2 mb-4'>
+                  {post.tags.map((tag, tagIndex) => (
+                    <Badge key={tagIndex} variant='secondary' className='text-xs'>
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
 
-                    <a href={post.href}>
-                      <Button
-                        variant='secondary'
-                        className='absolute -right-3 -bottom-1 flex h-10 w-10 items-center justify-center rounded-full transition-all ease-in-out hover:rotate-45 md:bottom-14'
-                      >
-                        <ArrowUpRightIcon />
-                      </Button>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
+                <Link href={post.href}>
+                  <Button
+                    variant='ghost'
+                    size='sm'
+                    className='absolute top-0 right-0 h-8 w-8 p-0'
+                  >
+                    <ArrowUpRightIcon className='h-4 w-4' />
+                  </Button>
+                </Link>
+              </div>
 
               {index < blogPosts.length - 1 && (
-                <Separator className='h-px w-full' />
+                <div className='h-px w-full bg-border' />
               )}
             </React.Fragment>
           ))}

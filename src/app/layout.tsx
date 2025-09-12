@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { ErrorBoundary } from '@/components/error-boundary';
+import SmoothScroll from '@/components/smooth-scroll';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -94,6 +95,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col`}
       >
         <ErrorBoundary>
+          <SmoothScroll />
           <div className='flex flex-col min-h-screen'>
             <Navigation />
             <main className='flex-1'>

@@ -119,4 +119,45 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Плавная прокрутка */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Анимации для мобильного меню */
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutToRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Стили для плавной прокрутки якорных ссылок */
+  a[href^="#"] {
+    scroll-margin-top: 2rem;
+  }
+  
+  /* Утилита для ограничения количества строк */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
