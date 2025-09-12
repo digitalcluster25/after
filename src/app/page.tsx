@@ -16,9 +16,10 @@ export default function Home() {
             Закрытая экосистема для тех, кто создает будущее
           </h2>
           <p className='text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed'>
-            Объединяем знания, технологии и сильных людей, чтобы вы управляли главным активом — своей энергией
+            Объединяем знания, технологии и сильных людей, чтобы вы управляли
+            главным активом — своей энергией
           </p>
-          
+
           {/* Key Benefits */}
           <div className='grid md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-8'>
             <div className='flex items-center space-x-2 text-left'>
@@ -27,27 +28,33 @@ export default function Home() {
               </div>
               <div>
                 <h3 className='font-semibold text-xs'>ЯДРО ЗНАНИЙ</h3>
-                <p className='text-xs text-muted-foreground'>Экспертные знания без воды</p>
+                <p className='text-xs text-muted-foreground'>
+                  Экспертные знания без воды
+                </p>
               </div>
             </div>
-            
+
             <div className='flex items-center space-x-2 text-left'>
               <div className='w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0'>
                 <Users className='h-4 w-4 text-primary' />
               </div>
               <div>
                 <h3 className='font-semibold text-xs'>СИЛА СВЯЗЕЙ</h3>
-                <p className='text-xs text-muted-foreground'>Ваш новый круг единомышленников</p>
+                <p className='text-xs text-muted-foreground'>
+                  Ваш новый круг единомышленников
+                </p>
               </div>
             </div>
-            
+
             <div className='flex items-center space-x-2 text-left'>
               <div className='w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0'>
                 <Wrench className='h-4 w-4 text-primary' />
               </div>
               <div>
                 <h3 className='font-semibold text-xs'>ТЕХНОЛОГИИ</h3>
-                <p className='text-xs text-muted-foreground'>Инструменты будущего</p>
+                <p className='text-xs text-muted-foreground'>
+                  Инструменты будущего
+                </p>
               </div>
             </div>
           </div>
