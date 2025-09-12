@@ -272,15 +272,8 @@ export default function ActivitiesPage() {
     <div className='bg-background'>
       <PageHeader title='Активности' />
 
-      <section className='py-32'>
-        <div className='container px-0 md:px-8'>
-          <h1 className='mb-10 px-4 text-3xl font-semibold md:mb-14 md:text-4xl'>
-            Справочник активностей
-          </h1>
-          <p className='mb-10 px-4 text-lg text-muted-foreground'>
-            Выберите активность, соответствующую категории из параметров активности
-          </p>
-
+      <section className='pt-8 pb-8 md:pb-16'>
+        <div className='container px-0'>
           <div className='flex flex-col'>
             <Separator />
             {activities.map((activity, index) => (

@@ -680,18 +680,15 @@ export default function ParamsPage() {
     <div className='bg-background'>
       <PageHeader title='Параметры активности' />
 
-      <section className='py-32'>
-        <div className='container px-0 md:px-8'>
-          <h1 className='mb-10 px-4 text-3xl font-semibold md:mb-14 md:text-4xl'>
-            Полный справочник показателей активности
-          </h1>
+      <section className='pt-8 pb-8 md:pb-16'>
+        <div className='container px-0'>
           <div className='flex flex-col'>
             <Separator />
             {activityParams.map((item, index) => {
               const isExpanded = expandedItems.has(index);
               return (
                 <React.Fragment key={index}>
-                  <div className='grid items-center gap-4 px-4 py-5 md:grid-cols-4'>
+                  <div className='grid items-center gap-4 py-5 md:grid-cols-4'>
                     <div className='order-2 flex items-center gap-2 md:order-none'>
                       <span className='flex h-14 w-16 shrink-0 items-center justify-center rounded-md bg-muted'>
                         {item.icon}

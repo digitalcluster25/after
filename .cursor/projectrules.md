@@ -1,7 +1,7 @@
 #обновление правил проекта
 После каждого существенного изменения в архитектуре проекта, добавления или удаления технологии тв обязан внести в этот документ правки
 
-# Анализ фронтенд кодовой базы: Digital Cluster 25
+# Анализ фронтенд кодовой базы: :after
 
 ## 📁 Структура проекта
 
@@ -9,19 +9,32 @@
 after/
 ├── src/
 │   ├── app/                    # Next.js App Router (страницы и layout)
+│   │   ├── __tests__/          # Тесты страниц
+│   │   ├── activities/         # Страница активностей
+│   │   ├── api/                # API маршруты
+│   │   ├── blog/               # Страница справочника (блог)
+│   │   │   └── [slug]/         # Динамические страницы статей
+│   │   ├── params/             # Страница параметров здоровья
 │   │   ├── globals.css         # Глобальные стили с CSS переменными
 │   │   ├── layout.tsx          # Корневой layout с навигацией
 │   │   └── page.tsx            # Главная лендинговая страница
 │   ├── components/
-│   │   ├── navigation.tsx      # Компонент навигации с активными ссылками
-│   │   └── ui/                 # shadcn/ui компоненты (40+ компонентов)
+│   │   ├── __tests__/          # Тесты компонентов
+│   │   ├── ui/                 # shadcn/ui компоненты (40+ компонентов)
+│   │   ├── error-boundary.tsx  # Error Boundary с Sentry интеграцией
+│   │   ├── footer.tsx          # Футер с онлайн статусом
+│   │   ├── navigation.tsx      # Компонент навигации
+│   │   └── page-header.tsx     # Заголовок страниц
 │   ├── hooks/
 │   │   └── use-mobile.ts       # Хук для определения мобильных устройств
-│   └── lib/
-│       └── utils.ts            # Утилиты (cn функция для классов)
+│   ├── lib/
+│   │   ├── __tests__/          # Тесты утилит
+│   │   └── utils.ts            # Утилиты (cn функция для классов)
+│   └── test-utils/
+│       └── index.tsx           # Утилиты для тестирования
 ├── public/                     # Статические ресурсы
-├── texts/
-│   └── dc25.md                # Контент для лендинга
+├── texts/                      # Контентные файлы
+│   └── main.md                # Контент для лендинга
 └── config files               # Конфигурации (Next.js, TypeScript, ESLint)
 ```
 
@@ -41,6 +54,10 @@ after/
 | **Sonner**                   | ^2.0.7          | Toast уведомления            |
 | **class-variance-authority** | ^0.7.1          | Управление вариантами стилей |
 | **clsx + tailwind-merge**    | ^2.1.1 + ^3.3.1 | Утилиты для классов          |
+| **Sentry**                   | ^10.11.0        | Мониторинг ошибок            |
+| **Jest**                     | ^30.1.3         | Тестирование                 |
+| **Prettier**                 | ^3.6.2          | Форматирование кода          |
+| **ESLint**                   | ^9              | Линтинг                      |
 
 ## 🏗 Архитектура
 
@@ -70,6 +87,7 @@ const buttonVariants = cva('inline-flex items-center justify-center gap-2...', {
 - **Композиция компонентов**: Использование Slot от Radix UI
 - **Утилиты**: Централизованные в `lib/utils.ts`
 - **Типизация**: Строгая типизация с TypeScript
+- **Error Boundaries**: Централизованная обработка ошибок с Sentry
 
 ### API слой
 
@@ -108,7 +126,7 @@ export function cn(...inputs: ClassValue[]) {
 ### Линтеры и форматирование
 
 - **ESLint**: Next.js конфигурация с TypeScript
-- **Prettier**: Не настроен (рекомендуется добавить)
+- **Prettier**: Настроен с ESLint интеграцией
 - **TypeScript**: Строгая типизация включена
 
 ### Соглашения по коду
@@ -150,13 +168,13 @@ export function Navigation() {
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded bg-primary">
-              <span className="text-primary-foreground">DC</span>
+              <span className="text-primary-foreground">:</span>
             </div>
-            <span className="text-xl font-bold">DC25</span>
+            <span className="text-xl font-bold">after</span>
           </Link>
         </div>
       </div>
@@ -187,11 +205,20 @@ const buttonVariants = cva('inline-flex items-center justify-center gap-2...', {
 ```typescript
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navigation />
-        {children}
-        <Toaster />
+    <html lang='en' className='h-full'>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col`}>
+        <ErrorBoundary>
+          <div className='flex flex-col min-h-screen'>
+            <Navigation />
+            <main className='flex-1'>
+              <div className='container mx-auto px-6 max-w-7xl'>
+                {children}
+              </div>
+            </main>
+            <Footer />
+          </div>
+          <Toaster />
+        </ErrorBoundary>
       </body>
     </html>
   );
@@ -199,7 +226,57 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 ```
 
 **Назначение**: Корневой layout с навигацией и уведомлениями
-**Особенности**: Google Fonts, глобальные компоненты
+**Особенности**: Google Fonts, глобальные компоненты, Error Boundary
+
+### 4. Error Boundary Component
+
+```typescript
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    const eventId = Sentry.captureException(error, {
+      contexts: {
+        react: {
+          componentStack: errorInfo.componentStack,
+        },
+      },
+    });
+    this.setState({ eventId });
+  }
+}
+```
+
+**Назначение**: Централизованная обработка ошибок
+**Особенности**: Sentry интеграция, пользовательский fallback
+
+### 5. Footer Component
+
+```typescript
+export function Footer() {
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const moscowTime = new Intl.DateTimeFormat('ru-RU', options).format(new Date());
+      setTime(moscowTime);
+    };
+    updateTime();
+    const intervalId = setInterval(updateTime, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <footer className='mt-auto'>
+      <div className='flex items-center gap-2'>
+        <span>С вами онлайн с сентябрь 2025</span>
+        <div className='w-2 h-2 bg-green-500 rounded-full animate-pulse'></div>
+      </div>
+    </footer>
+  );
+}
+```
+
+**Назначение**: Футер с онлайн статусом и временем
+**Особенности**: Живое время, анимированный индикатор
 
 ## 📋 Выводы и рекомендации
 
@@ -210,11 +287,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 - ✅ **Доступность**: Radix UI примитивы
 - ✅ **Типизация**: Строгая TypeScript типизация
 - ✅ **Производительность**: App Router, оптимизированные компоненты
+- ✅ **Мониторинг**: Sentry для error tracking
+- ✅ **Тестирование**: Jest + React Testing Library настроены
+- ✅ **Форматирование**: Prettier + ESLint интеграция
 
 ### Области для улучшения
 
-- ✅ **Тестирование**: Jest + React Testing Library настроены
-- ✅ **Prettier**: Настроен автоматический форматирование
 - ✅ **CI/CD**: GitHub Actions настроены
 - ✅ **Документация**: Storybook настроен
 - ✅ **Мониторинг**: Sentry настроен для error tracking
