@@ -6,7 +6,9 @@ import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: 'Главная', href: '/' },
-  { name: 'Блог', href: '/blog' },
+  { name: 'Справочник', href: '/blog' },
+  { name: 'Параметры здоровья', href: '/params' },
+  { name: 'Активности', href: '/activities' },
 ];
 
 export function Navigation() {
@@ -20,10 +22,10 @@ export function Navigation() {
             <Link href='/' className='flex items-center space-x-2'>
               <div className='h-8 w-8 rounded bg-primary flex items-center justify-center'>
                 <span className='text-primary-foreground font-bold text-sm'>
-                  DC
+                  :
                 </span>
               </div>
-              <span className='text-xl font-bold'>DC25</span>
+              <span className='text-xl font-bold'>after</span>
             </Link>
 
             <div className='hidden md:flex space-x-6'>

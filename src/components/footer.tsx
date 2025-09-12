@@ -29,24 +29,13 @@ export function Footer() {
     <footer className='mt-auto'>
       <div className='container mx-auto px-6 max-w-7xl'>
         <div>
-          <div className='aspect-[13.7] w-full flex items-center justify-center py-8'>
-            <div className='relative'>
-              <div className='text-6xl md:text-8xl font-bold text-foreground tracking-tight leading-none'>
-                Digital Cluster 25
-              </div>
-              <div className='absolute inset-0 text-6xl md:text-8xl font-bold text-foreground tracking-tight leading-none overflow-hidden'>
-                <div className='relative h-full'>
-                  <div className='absolute top-0 left-0 right-0 h-4 md:h-6 bg-background'></div>
-                  <div className='absolute bottom-0 left-0 right-0 h-4 md:h-6 bg-background'></div>
-                  <div className='opacity-0'>Digital Cluster 25</div>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className='flex flex-col items-center justify-between py-6 text-muted-foreground md:flex-row'>
-            <div>Онлайн с сентября 2025</div>
+            <div className='flex items-center gap-2'>
+              <span>С вами онлайн с сентябрь 2025</span>
+              <div className='w-2 h-2 bg-green-500 rounded-full animate-pulse'></div>
+            </div>
             <div>Время → {time}</div>
-            <div>hello@digitalcluster.online</div>
+            <div>hello@after.io</div>
           </div>
         </div>
       </div>

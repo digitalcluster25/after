@@ -1,4 +1,5 @@
 import { ArrowUpRightIcon } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 import { PageHeader } from '@/components/page-header';
@@ -99,9 +100,11 @@ export default function BlogPage() {
                         {post.date}
                       </p>
 
-                      <h2 className='mt-2 text-lg font-medium tracking-tight text-foreground md:text-2xl'>
-                        {post.title}
-                      </h2>
+                      <Link href={post.href}>
+                        <h2 className='mt-2 text-lg font-medium tracking-tight text-foreground md:text-2xl hover:text-primary transition-colors cursor-pointer'>
+                          {post.title}
+                        </h2>
+                      </Link>
 
                       <p className='md:text-md mt-4 text-sm text-muted-foreground md:pr-24 xl:pr-32'>
                         {post.content}
