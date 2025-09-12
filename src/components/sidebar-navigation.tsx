@@ -14,8 +14,8 @@ export function SidebarNavigation({ sections }: SidebarNavigationProps) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
@@ -27,7 +27,7 @@ export function SidebarNavigation({ sections }: SidebarNavigationProps) {
       }
     );
 
-    sections.forEach((section) => {
+    sections.forEach(section => {
       const element = document.getElementById(section.id);
       if (element) {
         observer.observe(element);
@@ -35,7 +35,7 @@ export function SidebarNavigation({ sections }: SidebarNavigationProps) {
     });
 
     return () => {
-      sections.forEach((section) => {
+      sections.forEach(section => {
         const element = document.getElementById(section.id);
         if (element) {
           observer.unobserve(element);
@@ -48,7 +48,7 @@ export function SidebarNavigation({ sections }: SidebarNavigationProps) {
     <div>
       <h3 className='font-semibold text-lg mb-4'>На этой странице</h3>
       <nav className='space-y-2'>
-        {sections.map((section) => (
+        {sections.map(section => (
           <a
             key={section.id}
             href={`#${section.id}`}

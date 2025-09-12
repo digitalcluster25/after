@@ -6,7 +6,12 @@ import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from '@/components/ui/sheet';
 
 const navigation = [
   { name: 'Главная', href: '/' },
@@ -61,7 +66,10 @@ export function Navigation() {
                   <span className='sr-only'>Открыть меню</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side='right' className='w-80 animate-in slide-in-from-right duration-300'>
+              <SheetContent
+                side='right'
+                className='w-80 animate-in slide-in-from-right duration-300'
+              >
                 <SheetTitle className='sr-only'>Навигационное меню</SheetTitle>
                 <div className='flex flex-col space-y-6 mt-6'>
                   <div className='flex items-center space-x-2 pb-4 border-b'>
@@ -87,7 +95,7 @@ export function Navigation() {
                         )}
                         style={{
                           animationDelay: `${index * 50}ms`,
-                          animation: 'slideInFromRight 0.3s ease-out forwards'
+                          animation: 'slideInFromRight 0.3s ease-out forwards',
                         }}
                       >
                         {item.name}

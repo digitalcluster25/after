@@ -8,7 +8,7 @@ export default function SmoothScroll() {
     const handleClick = (e: Event) => {
       const target = e.target as HTMLElement;
       const link = target.closest('a[href^="#"]');
-      
+
       if (link) {
         const href = link.getAttribute('href');
         if (href && href !== '#') {
@@ -28,7 +28,7 @@ export default function SmoothScroll() {
     const handleBackToTop = (e: Event) => {
       const target = e.target as HTMLElement;
       const button = target.closest('a[href="#"]');
-      
+
       if (button) {
         e.preventDefault();
         window.scrollTo({

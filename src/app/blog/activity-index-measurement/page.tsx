@@ -1,8 +1,15 @@
 import { Metadata } from 'next';
-import { ArrowLeft, Calendar, User, Tag, Share2, ArrowUp, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import {
+  ArrowLeft,
+  Calendar,
+  ArrowUp,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { SidebarNavigation } from '@/components/sidebar-navigation';
 
@@ -71,10 +78,10 @@ export default function ActivityIndexMeasurementPage() {
             <article className='prose prose-lg max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-p:leading-relaxed prose-p:text-muted-foreground prose-li:text-muted-foreground'>
               <div id='introduction' className='mb-8'>
                 <p className='text-xl leading-relaxed mb-6 text-foreground font-medium'>
-                  Индекс активности — это комплексный показатель, который объединяет
-                  различные аспекты физической активности в единую числовую оценку.
-                  Он позволяет объективно оценить уровень активности и отслеживать
-                  прогресс в достижении фитнес-целей.
+                  Индекс активности — это комплексный показатель, который
+                  объединяет различные аспекты физической активности в единую
+                  числовую оценку. Он позволяет объективно оценить уровень
+                  активности и отслеживать прогресс в достижении фитнес-целей.
                 </p>
               </div>
 
@@ -132,8 +139,8 @@ export default function ActivityIndexMeasurementPage() {
                 Частота (15% веса)
               </h3>
               <p className='text-lg leading-relaxed mb-6'>
-                Количество дней в неделю, когда выполнялась физическая активность
-                определенной интенсивности и продолжительности.
+                Количество дней в неделю, когда выполнялась физическая
+                активность определенной интенсивности и продолжительности.
               </p>
 
               <h3
@@ -157,9 +164,9 @@ export default function ActivityIndexMeasurementPage() {
               <div className='bg-gradient-to-r from-slate-50 to-gray-50 border border-slate-200 rounded-xl p-8 mb-8'>
                 <div className='bg-white rounded-lg p-6 border border-slate-100'>
                   <p className='font-mono text-xl text-slate-800 leading-relaxed'>
-                    Индекс активности = (Общая активность × 0.3) + (Интенсивность ×
-                    0.25) + (Продолжительность × 0.2) + (Частота × 0.15) +
-                    (Восстановление × 0.1)
+                    Индекс активности = (Общая активность × 0.3) +
+                    (Интенсивность × 0.25) + (Продолжительность × 0.2) +
+                    (Частота × 0.15) + (Восстановление × 0.1)
                   </p>
                 </div>
               </div>
@@ -217,20 +224,26 @@ export default function ActivityIndexMeasurementPage() {
                   </p>
                 </div>
                 <div className='bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-lg p-6'>
-                  <h4 className='font-bold text-orange-900 text-lg mb-2'>26-50</h4>
+                  <h4 className='font-bold text-orange-900 text-lg mb-2'>
+                    26-50
+                  </h4>
                   <p className='text-orange-800 text-sm'>
-                    Умеренно низкий уровень. Рекомендуется постепенное увеличение
-                    активности.
+                    Умеренно низкий уровень. Рекомендуется постепенное
+                    увеличение активности.
                   </p>
                 </div>
                 <div className='bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-6'>
-                  <h4 className='font-bold text-green-900 text-lg mb-2'>51-75</h4>
+                  <h4 className='font-bold text-green-900 text-lg mb-2'>
+                    51-75
+                  </h4>
                   <p className='text-green-800 text-sm'>
                     Хороший уровень активности. Поддерживайте текущий режим.
                   </p>
                 </div>
                 <div className='bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6'>
-                  <h4 className='font-bold text-blue-900 text-lg mb-2'>76-100</h4>
+                  <h4 className='font-bold text-blue-900 text-lg mb-2'>
+                    76-100
+                  </h4>
                   <p className='text-blue-800 text-sm'>
                     Отличный уровень активности. Оптимальный баланс нагрузки и
                     восстановления.
@@ -299,7 +312,9 @@ export default function ActivityIndexMeasurementPage() {
 
               {/* Share this article */}
               <div>
-                <h3 className='font-semibold text-lg mb-4'>Поделиться статьей</h3>
+                <h3 className='font-semibold text-lg mb-4'>
+                  Поделиться статьей
+                </h3>
                 <div className='flex gap-2'>
                   <Button size='icon' variant='outline' className='h-10 w-10'>
                     <Facebook className='h-4 w-4' />
@@ -317,11 +332,7 @@ export default function ActivityIndexMeasurementPage() {
               </div>
 
               {/* Back to top */}
-              <Button 
-                variant='outline' 
-                className='w-full gap-2'
-                asChild
-              >
+              <Button variant='outline' className='w-full gap-2' asChild>
                 <a href='#'>
                   <ArrowUp className='h-4 w-4' />
                   Наверх

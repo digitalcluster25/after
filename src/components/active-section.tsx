@@ -12,8 +12,8 @@ export function ActiveSection({ children, sections }: ActiveSectionProps) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
@@ -25,7 +25,7 @@ export function ActiveSection({ children, sections }: ActiveSectionProps) {
       }
     );
 
-    sections.forEach((sectionId) => {
+    sections.forEach(sectionId => {
       const element = document.getElementById(sectionId);
       if (element) {
         observer.observe(element);
@@ -33,7 +33,7 @@ export function ActiveSection({ children, sections }: ActiveSectionProps) {
     });
 
     return () => {
-      sections.forEach((sectionId) => {
+      sections.forEach(sectionId => {
         const element = document.getElementById(sectionId);
         if (element) {
           observer.unobserve(element);
@@ -42,9 +42,5 @@ export function ActiveSection({ children, sections }: ActiveSectionProps) {
     };
   }, [sections]);
 
-  return (
-    <div data-active-section={activeSection}>
-      {children}
-    </div>
-  );
+  return <div data-active-section={activeSection}>{children}</div>;
 }
