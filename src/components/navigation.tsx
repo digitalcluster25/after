@@ -13,12 +13,16 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 
-const navigation = [
-  { name: 'Главная', href: '/' },
-  { name: 'Справочник', href: '/blog' },
-  { name: 'Параметры здоровья', href: '/params' },
-  { name: 'Активности', href: '/activities' },
-];
+  const navigation = [
+    { name: 'Главная', href: '/' },
+    { name: 'Справочник', href: '/blog' },
+    { name: 'Параметры здоровья', href: '/params' },
+    { name: 'Активности', href: '/activities' },
+    { name: 'Мастер-классы', href: '/masterclasses' },
+    { name: 'Цели', href: '/goals' },
+    { name: 'Трекер здоровья', href: '/tracker' },
+    { name: 'Профиль', href: '/profile' },
+  ];
 
 export function Navigation() {
   const pathname = usePathname();
