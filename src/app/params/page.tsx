@@ -276,7 +276,9 @@ export default function ParamsPage() {
                     </span>
                     <div className='flex flex-col gap-1'>
                       <h3 className='font-semibold'>{param.title}</h3>
-                      <p className='text-sm text-muted-foreground'>{param.category}</p>
+                      <p className='text-sm text-muted-foreground'>
+                        {param.category}
+                      </p>
                     </div>
                   </div>
 
@@ -285,7 +287,9 @@ export default function ParamsPage() {
                       <strong>Единица:</strong> {param.unit}
                     </div>
                     <div className='text-sm text-muted-foreground'>
-                      <strong>Диапазоны:</strong> {param.ranges.min} | {param.ranges.low} | {param.ranges.medium} | {param.ranges.high} | {param.ranges.max}
+                      <strong>Диапазоны:</strong> {param.ranges.min} |{' '}
+                      {param.ranges.low} | {param.ranges.medium} |{' '}
+                      {param.ranges.high} | {param.ranges.max}
                     </div>
                   </div>
 

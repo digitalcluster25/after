@@ -65,8 +65,7 @@ const activities: ActivityItem[] = [
     icon: <div className='w-8 h-8 bg-gray-300 rounded'></div>,
     title: 'Велосипед',
     category: 'Велоспорт',
-    description:
-      'Кардио-тренировка с акцентом на мышцы ног и ягодиц.',
+    description: 'Кардио-тренировка с акцентом на мышцы ног и ягодиц.',
     slug: 'cycling',
   },
   {

@@ -39,12 +39,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться контролировать пульс',
       'Понять принципы прогрессии нагрузок',
     ],
-    requirements: [
-      'Спортивная одежда',
-      'Кроссовки',
-      'Вода',
-      'Полотенце',
-    ],
+    requirements: ['Спортивная одежда', 'Кроссовки', 'Вода', 'Полотенце'],
     schedule: [
       { time: '0-10 мин', activity: 'Разминка и подготовка' },
       { time: '10-20 мин', activity: 'Теория кардио-тренировок' },
@@ -98,11 +93,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться выбирать обувь',
       'Понять принципы тренировок',
     ],
-    requirements: [
-      'Кроссовки для бега',
-      'Спортивная одежда',
-      'Вода',
-    ],
+    requirements: ['Кроссовки для бега', 'Спортивная одежда', 'Вода'],
     schedule: [
       { time: '0-10 мин', activity: 'Разминка и подготовка' },
       { time: '10-20 мин', activity: 'Теория техники бега' },
@@ -126,10 +117,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться контролировать темп',
       'Понять принципы оздоровления',
     ],
-    requirements: [
-      'Удобная обувь',
-      'Спортивная одежда',
-    ],
+    requirements: ['Удобная обувь', 'Спортивная одежда'],
     schedule: [
       { time: '0-5 мин', activity: 'Разминка' },
       { time: '5-15 мин', activity: 'Теория ходьбы' },
@@ -152,11 +140,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться дыханию в воде',
       'Понять принципы тренировок',
     ],
-    requirements: [
-      'Купальник/плавки',
-      'Очки для плавания',
-      'Шапочка',
-    ],
+    requirements: ['Купальник/плавки', 'Очки для плавания', 'Шапочка'],
     schedule: [
       { time: '0-15 мин', activity: 'Разминка в воде' },
       { time: '15-30 мин', activity: 'Теория стилей плавания' },
@@ -179,11 +163,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться ритму движений',
       'Понять принципы тренировок',
     ],
-    requirements: [
-      'Гребной тренажер',
-      'Спортивная одежда',
-      'Вода',
-    ],
+    requirements: ['Гребной тренажер', 'Спортивная одежда', 'Вода'],
     schedule: [
       { time: '0-10 мин', activity: 'Разминка' },
       { time: '10-20 мин', activity: 'Теория гребли' },
@@ -206,11 +186,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться переключению передач',
       'Понять принципы безопасности',
     ],
-    requirements: [
-      'Велосипед',
-      'Шлем',
-      'Спортивная одежда',
-    ],
+    requirements: ['Велосипед', 'Шлем', 'Спортивная одежда'],
     schedule: [
       { time: '0-10 мин', activity: 'Разминка' },
       { time: '10-20 мин', activity: 'Теория езды' },
@@ -233,10 +209,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться медитации',
       'Понять принципы йоги',
     ],
-    requirements: [
-      'Коврик для йоги',
-      'Удобная одежда',
-    ],
+    requirements: ['Коврик для йоги', 'Удобная одежда'],
     schedule: [
       { time: '0-15 мин', activity: 'Медитация и дыхание' },
       { time: '15-30 мин', activity: 'Теория йоги' },
@@ -259,10 +232,7 @@ const masterclassesData: Record<string, MasterclassData> = {
       'Научиться контролю корпуса',
       'Понять принципы укрепления',
     ],
-    requirements: [
-      'Коврик',
-      'Удобная одежда',
-    ],
+    requirements: ['Коврик', 'Удобная одежда'],
     schedule: [
       { time: '0-10 мин', activity: 'Разминка' },
       { time: '10-20 мин', activity: 'Теория пилатеса' },
@@ -294,7 +264,7 @@ export default async function MasterclassDetailPage({ params }: PageProps) {
         <div className='container px-0'>
           <div className='flex flex-col'>
             <Separator />
-            
+
             <div className='px-4 py-6'>
               {/* Заголовок и иконка */}
               <div className='flex items-start gap-4 mb-6'>
@@ -316,29 +286,46 @@ export default async function MasterclassDetailPage({ params }: PageProps) {
                 {/* Левая колонка - детали мастер-класса */}
                 <div className='space-y-4'>
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Активность</h3>
-                    <span className='text-base text-gray-600'>{masterclass.activity}</span>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Активность
+                    </h3>
+                    <span className='text-base text-gray-600'>
+                      {masterclass.activity}
+                    </span>
                   </div>
-                  
+
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Инструктор</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Инструктор
+                    </h3>
                     <div className='flex items-center gap-2'>
                       <User className='h-4 w-4 text-gray-500' />
-                      <span className='text-base text-gray-600'>{masterclass.instructor}</span>
+                      <span className='text-base text-gray-600'>
+                        {masterclass.instructor}
+                      </span>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Продолжительность</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Продолжительность
+                    </h3>
                     <div className='flex items-center gap-2'>
                       <Clock className='h-4 w-4 text-gray-500' />
-                      <span className='text-base text-gray-600'>{masterclass.duration}</span>
+                      <span className='text-base text-gray-600'>
+                        {masterclass.duration}
+                      </span>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Уровень</h3>
-                    <Badge variant='outline' className='text-sm bg-gray-50 text-gray-700 border-gray-300'>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Уровень
+                    </h3>
+                    <Badge
+                      variant='outline'
+                      className='text-sm bg-gray-50 text-gray-700 border-gray-300'
+                    >
                       {masterclass.level}
                     </Badge>
                   </div>
@@ -347,10 +334,15 @@ export default async function MasterclassDetailPage({ params }: PageProps) {
                 {/* Правая колонка - цели и требования */}
                 <div className='space-y-4'>
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Цели мастер-класса</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Цели мастер-класса
+                    </h3>
                     <ul className='space-y-1'>
                       {masterclass.objectives.map((objective, index) => (
-                        <li key={index} className='flex items-start gap-2 text-sm text-gray-600'>
+                        <li
+                          key={index}
+                          className='flex items-start gap-2 text-sm text-gray-600'
+                        >
                           <Target className='h-4 w-4 text-gray-400 mt-0.5 shrink-0' />
                           {objective}
                         </li>
@@ -359,7 +351,9 @@ export default async function MasterclassDetailPage({ params }: PageProps) {
                   </div>
 
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Что понадобится</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Что понадобится
+                    </h3>
                     <ul className='space-y-1'>
                       {masterclass.requirements.map((requirement, index) => (
                         <li key={index} className='text-sm text-gray-600'>
@@ -373,14 +367,18 @@ export default async function MasterclassDetailPage({ params }: PageProps) {
 
               {/* Программа мастер-класса */}
               <div className='bg-gray-50 rounded-lg p-6 mb-6'>
-                <h3 className='text-lg font-medium text-gray-700 mb-4'>Программа мастер-класса</h3>
+                <h3 className='text-lg font-medium text-gray-700 mb-4'>
+                  Программа мастер-класса
+                </h3>
                 <div className='space-y-3'>
                   {masterclass.schedule.map((item, index) => (
                     <div key={index} className='flex items-center gap-4 py-2'>
                       <span className='text-sm font-medium text-gray-500 w-20 shrink-0'>
                         {item.time}
                       </span>
-                      <span className='text-sm text-gray-700'>{item.activity}</span>
+                      <span className='text-sm text-gray-700'>
+                        {item.activity}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -397,7 +395,7 @@ export default async function MasterclassDetailPage({ params }: PageProps) {
                 </Link>
               </div>
             </div>
-            
+
             <Separator />
           </div>
         </div>

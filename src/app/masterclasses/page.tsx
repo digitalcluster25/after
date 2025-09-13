@@ -23,7 +23,8 @@ const masterclasses: MasterclassItem[] = [
     instructor: 'Анна Петрова',
     duration: '60 минут',
     level: 'Начинающий',
-    description: 'Изучите базовые принципы кардио-тренировок и правильную технику выполнения упражнений.',
+    description:
+      'Изучите базовые принципы кардио-тренировок и правильную технику выполнения упражнений.',
     slug: 'cardio-basics',
   },
   {
@@ -33,7 +34,8 @@ const masterclasses: MasterclassItem[] = [
     instructor: 'Михаил Козлов',
     duration: '90 минут',
     level: 'Продвинутый',
-    description: 'Освойте продвинутые техники интервальных тренировок для максимальной эффективности.',
+    description:
+      'Освойте продвинутые техники интервальных тренировок для максимальной эффективности.',
     slug: 'hiit-advanced',
   },
   {
@@ -53,7 +55,8 @@ const masterclasses: MasterclassItem[] = [
     instructor: 'Ольга Иванова',
     duration: '30 минут',
     level: 'Начинающий',
-    description: 'Освойте технику оздоровительной ходьбы для максимальной пользы.',
+    description:
+      'Освойте технику оздоровительной ходьбы для максимальной пользы.',
     slug: 'health-walking',
   },
   {
@@ -130,7 +133,8 @@ export default function MasterclassesPage() {
                           {masterclass.title}
                         </h3>
                         <p className='text-sm text-gray-500 mb-2'>
-                          {masterclass.activity} • {masterclass.instructor} • {masterclass.duration}
+                          {masterclass.activity} • {masterclass.instructor} •{' '}
+                          {masterclass.duration}
                         </p>
                         <p className='text-sm text-gray-600 leading-relaxed'>
                           {masterclass.description}

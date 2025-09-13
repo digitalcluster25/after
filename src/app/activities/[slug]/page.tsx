@@ -9,13 +9,16 @@ import { Separator } from '@/components/ui/separator';
 
 // Функция для получения мастер-классов по активности
 function getMasterclassesForActivity(activityTitle: string) {
-  const masterclassesMap: Record<string, Array<{
-    title: string;
-    instructor: string;
-    duration: string;
-    level: string;
-    slug: string;
-  }>> = {
+  const masterclassesMap: Record<
+    string,
+    Array<{
+      title: string;
+      instructor: string;
+      duration: string;
+      level: string;
+      slug: string;
+    }>
+  > = {
     'Кардио-тренировки': [
       {
         title: 'Основы кардио-тренировок',
@@ -34,7 +37,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'hiit-advanced',
       },
     ],
-    'Бег': [
+    Бег: [
       {
         title: 'Техника бега для начинающих',
         instructor: 'Елена Смирнова',
@@ -43,7 +46,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'running-technique',
       },
     ],
-    'Ходьба': [
+    Ходьба: [
       {
         title: 'Оздоровительная ходьба',
         instructor: 'Ольга Иванова',
@@ -52,7 +55,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'health-walking',
       },
     ],
-    'Плавание': [
+    Плавание: [
       {
         title: 'Стили плавания',
         instructor: 'Дмитрий Волков',
@@ -61,7 +64,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'swimming-styles',
       },
     ],
-    'Гребля': [
+    Гребля: [
       {
         title: 'Гребля на тренажере',
         instructor: 'Алексей Морозов',
@@ -70,7 +73,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'rowing-technique',
       },
     ],
-    'Велосипед': [
+    Велосипед: [
       {
         title: 'Велосипедная подготовка',
         instructor: 'Игорь Соколов',
@@ -79,7 +82,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'cycling-basics',
       },
     ],
-    'Йога': [
+    Йога: [
       {
         title: 'Йога для начинающих',
         instructor: 'Мария Новикова',
@@ -88,7 +91,7 @@ function getMasterclassesForActivity(activityTitle: string) {
         slug: 'yoga-basics',
       },
     ],
-    'Пилатес': [
+    Пилатес: [
       {
         title: 'Пилатес для укрепления корпуса',
         instructor: 'Татьяна Лебедева',
@@ -147,7 +150,7 @@ const activitiesData: Record<string, ActivityData> = {
     duration: '15-30 минут',
     intensity: 'Высокая',
   },
-  'running': {
+  running: {
     icon: <span className='text-4xl'>❤️</span>,
     title: 'Бег',
     category: 'Кардио',
@@ -163,7 +166,7 @@ const activitiesData: Record<string, ActivityData> = {
     duration: '20-60 минут',
     intensity: 'Средняя',
   },
-  'walking': {
+  walking: {
     icon: <span className='text-4xl'>👣</span>,
     title: 'Ходьба',
     category: 'Кардио',
@@ -179,7 +182,7 @@ const activitiesData: Record<string, ActivityData> = {
     duration: '30-90 минут',
     intensity: 'Низкая',
   },
-  'swimming': {
+  swimming: {
     icon: <span className='text-4xl'>🌊</span>,
     title: 'Плавание',
     category: 'Плавание',
@@ -195,7 +198,7 @@ const activitiesData: Record<string, ActivityData> = {
     duration: '30-60 минут',
     intensity: 'Средняя',
   },
-  'rowing': {
+  rowing: {
     icon: <span className='text-4xl'>🚣</span>,
     title: 'Гребля',
     category: 'Гребля',
@@ -211,17 +214,12 @@ const activitiesData: Record<string, ActivityData> = {
     duration: '20-45 минут',
     intensity: 'Высокая',
   },
-  'cycling': {
+  cycling: {
     icon: <span className='text-4xl'>🚴</span>,
     title: 'Велосипед',
     category: 'Велоспорт',
-    description:
-      'Кардио-тренировка с акцентом на мышцы ног и ягодиц.',
-    benefits: [
-      'Укрепление ног',
-      'Улучшение координации',
-      'Снижение стресса',
-    ],
+    description: 'Кардио-тренировка с акцентом на мышцы ног и ягодиц.',
+    benefits: ['Укрепление ног', 'Улучшение координации', 'Снижение стресса'],
     equipment: ['Велосипед', 'Шлем', 'Спортивная одежда'],
     difficulty: 'Начинающий',
     duration: '30-120 минут',
@@ -233,43 +231,31 @@ const activitiesData: Record<string, ActivityData> = {
     category: 'Велоспорт',
     description:
       'Тренировка на велотренажере для развития выносливости и силы ног.',
-    benefits: [
-      'Укрепление ног',
-      'Улучшение выносливости',
-      'Снижение стресса',
-    ],
+    benefits: ['Укрепление ног', 'Улучшение выносливости', 'Снижение стресса'],
     equipment: ['Велотренажер', 'Спортивная одежда', 'Вода'],
     difficulty: 'Начинающий',
     duration: '20-60 минут',
     intensity: 'Средняя',
   },
-  'yoga': {
+  yoga: {
     icon: <span className='text-4xl'>🧘</span>,
     title: 'Йога',
     category: 'Метаболизм',
     description:
       'Практика, сочетающая физические упражнения, дыхание и медитацию.',
-    benefits: [
-      'Улучшение гибкости',
-      'Снижение стресса',
-      'Улучшение осанки',
-    ],
+    benefits: ['Улучшение гибкости', 'Снижение стресса', 'Улучшение осанки'],
     equipment: ['Коврик для йоги', 'Удобная одежда'],
     difficulty: 'Начинающий',
     duration: '30-90 минут',
     intensity: 'Низкая',
   },
-  'pilates': {
+  pilates: {
     icon: <span className='text-4xl'>⏰</span>,
     title: 'Пилатес',
     category: 'Метаболизм',
     description:
       'Система упражнений, направленная на укрепление корпуса и улучшение осанки.',
-    benefits: [
-      'Укрепление корпуса',
-      'Улучшение осанки',
-      'Развитие гибкости',
-    ],
+    benefits: ['Укрепление корпуса', 'Улучшение осанки', 'Развитие гибкости'],
     equipment: ['Коврик', 'Удобная одежда'],
     difficulty: 'Начинающий',
     duration: '30-60 минут',
@@ -299,7 +285,7 @@ export default async function ActivityDetailPage({ params }: PageProps) {
         <div className='container px-0'>
           <div className='flex flex-col'>
             <Separator />
-            
+
             <div className='px-4 py-6'>
               {/* Заголовок и иконка */}
               <div className='flex items-start gap-4 mb-6'>
@@ -321,7 +307,9 @@ export default async function ActivityDetailPage({ params }: PageProps) {
                 {/* Левая колонка - категория и параметры */}
                 <div className='space-y-4'>
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Категория</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Категория
+                    </h3>
                     <div className='flex items-center gap-2'>
                       <span className='text-base text-gray-600'>
                         {activity.category}
@@ -331,12 +319,17 @@ export default async function ActivityDetailPage({ params }: PageProps) {
                       </span>
                     </div>
                   </div>
-                  
+
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Параметры</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Параметры
+                    </h3>
                     <div className='space-y-2'>
                       <div className='flex items-center gap-2'>
-                        <Badge variant='outline' className='text-sm bg-gray-50 text-gray-700 border-gray-300'>
+                        <Badge
+                          variant='outline'
+                          className='text-sm bg-gray-50 text-gray-700 border-gray-300'
+                        >
                           {activity.difficulty}
                         </Badge>
                         <span className='text-sm text-gray-500'>
@@ -344,7 +337,10 @@ export default async function ActivityDetailPage({ params }: PageProps) {
                         </span>
                       </div>
                       <div className='flex items-center gap-2'>
-                        <Badge variant='outline' className='text-sm bg-gray-50 text-gray-700 border-gray-300'>
+                        <Badge
+                          variant='outline'
+                          className='text-sm bg-gray-50 text-gray-700 border-gray-300'
+                        >
                           {activity.intensity}
                         </Badge>
                         <span className='text-sm text-gray-500'>
@@ -358,11 +354,17 @@ export default async function ActivityDetailPage({ params }: PageProps) {
                 {/* Правая колонка - продолжительность и оборудование */}
                 <div className='space-y-4'>
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Продолжительность</h3>
-                    <span className='text-base text-gray-600'>{activity.duration}</span>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Продолжительность
+                    </h3>
+                    <span className='text-base text-gray-600'>
+                      {activity.duration}
+                    </span>
                   </div>
                   <div>
-                    <h3 className='text-lg font-medium text-gray-700 mb-2'>Оборудование</h3>
+                    <h3 className='text-lg font-medium text-gray-700 mb-2'>
+                      Оборудование
+                    </h3>
                     <div className='text-base text-gray-600'>
                       {activity.equipment.join(', ')}
                     </div>
@@ -372,7 +374,9 @@ export default async function ActivityDetailPage({ params }: PageProps) {
 
               {/* Польза */}
               <div className='bg-gray-50 rounded-lg p-6 mb-6'>
-                <h3 className='text-lg font-medium text-gray-700 mb-4'>Польза</h3>
+                <h3 className='text-lg font-medium text-gray-700 mb-4'>
+                  Польза
+                </h3>
                 <div className='flex flex-wrap gap-2'>
                   {activity.benefits.map((benefit, benefitIndex) => (
                     <span
@@ -387,27 +391,33 @@ export default async function ActivityDetailPage({ params }: PageProps) {
 
               {/* Мастер-классы */}
               <div className='bg-gray-50 rounded-lg p-6'>
-                <h3 className='text-lg font-medium text-gray-700 mb-4'>Мастер-классы по этой активности</h3>
+                <h3 className='text-lg font-medium text-gray-700 mb-4'>
+                  Мастер-классы по этой активности
+                </h3>
                 <div className='space-y-3'>
-                  {getMasterclassesForActivity(activity.title).map((masterclass, index) => (
-                    <Link
-                      key={index}
-                      href={`/masterclasses/${masterclass.slug}`}
-                      className='block p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-300 transition-colors'
-                    >
-                      <div className='flex items-center justify-between'>
-                        <div>
-                          <h4 className='font-medium text-gray-900'>{masterclass.title}</h4>
-                          <p className='text-sm text-gray-500'>
-                            {masterclass.instructor} • {masterclass.duration}
-                          </p>
+                  {getMasterclassesForActivity(activity.title).map(
+                    (masterclass, index) => (
+                      <Link
+                        key={index}
+                        href={`/masterclasses/${masterclass.slug}`}
+                        className='block p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-300 transition-colors'
+                      >
+                        <div className='flex items-center justify-between'>
+                          <div>
+                            <h4 className='font-medium text-gray-900'>
+                              {masterclass.title}
+                            </h4>
+                            <p className='text-sm text-gray-500'>
+                              {masterclass.instructor} • {masterclass.duration}
+                            </p>
+                          </div>
+                          <span className='inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700'>
+                            {masterclass.level}
+                          </span>
                         </div>
-                        <span className='inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700'>
-                          {masterclass.level}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    )
+                  )}
                 </div>
                 <div className='mt-4'>
                   <Link
@@ -430,7 +440,7 @@ export default async function ActivityDetailPage({ params }: PageProps) {
                 </Link>
               </div>
             </div>
-            
+
             <Separator />
           </div>
         </div>
